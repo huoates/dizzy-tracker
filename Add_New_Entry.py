@@ -15,6 +15,7 @@ st.title("Dizzy Diary")
 
 
 with st.form("diary_entry"):
+    st.subheader("New Diary Entry")
     food_eaten = st.text_input("Food Eaten")
     added_sugar = st.checkbox("Sugary Foods")
     caffeine = st.checkbox("Caffeine")
