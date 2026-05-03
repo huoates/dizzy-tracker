@@ -46,7 +46,7 @@ if df is not None and not df.empty:
     display_df["date"] = (
         display_df["date"]
         .dt.tz_localize("UTC")
-        .dt.tz_convert("US/Central")
+        .dt.tz_convert("America/Chicago")
         .dt.strftime("%b %d, %I:%M %p")
     )
     display_df = display_df.drop(columns=["timestamp"])
