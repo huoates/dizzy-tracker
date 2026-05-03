@@ -4,6 +4,11 @@ import pandas as pd
 import streamlit as st
 from streamlit_gsheets import GSheetsConnection
 
+st.set_page_config(
+    page_title="Dizzy Diary",
+    page_icon="📔",  # You can use an emoji or a URL to an image
+)
+
 conn = st.connection("gsheets", type=GSheetsConnection)
 
 st.title("Dizzy Diary")
