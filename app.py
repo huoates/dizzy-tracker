@@ -15,13 +15,16 @@ st.title("Dizzy Diary")
 
 
 with st.form("diary_entry"):
-    food_eaten = st.text_input("What food did you eat?")
-    st.write(
-        "Rate the dizziness and vertigo on a scale of 0 (none) to 5 (worst I've ever experienced)"
-    )
-    dizzy_severity = st.slider("How much dizziness?", 0, 5)
-    vertigo_severity = st.slider("How much vertigo?", 0, 5)
-    comments = st.text_area("Any other comments?")
+    food_eaten = st.text_input("Food Eaten")
+    added_sugar = st.checkbox("Sugary Foods")
+    caffeine = st.checkbox("Caffeine")
+    dizzy_severity = st.slider("Dizziness", 0, 5)
+    vertigo_severity = st.slider("Vertigo Scale", 0, 5)
+    hearing = st.slider("Hearing Loss", 0, 5)
+    tinnitus = st.slider("Tinnitus", 0, 5)
+    pressure = st.slider("Ear Pressure", 0, 5)
+    stress_level = st.slider("Stress Level", 0, 5)
+    comments = st.text_area("Miscellaneous Comments")
     submit_button = st.form_submit_button("Add Diary Entry")
 
 if submit_button:
@@ -34,6 +37,12 @@ if submit_button:
             "vertigo_severity": vertigo_severity,
             "comments": comments,
             "timestamp": current_unix_timestamp,
+            "added_sugar": added_sugar,
+            "caffeine": caffeine,
+            "hearing": hearing,
+            "tinnitus": tinnitus,
+            "pressure": pressure,
+            "stress_level": stress_level,
         }
         new_data = pd.DataFrame([new_entry])
         updated_df = pd.concat([latest_df, new_data], ignore_index=True)
