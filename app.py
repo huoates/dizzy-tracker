@@ -6,7 +6,7 @@ from streamlit_gsheets import GSheetsConnection
 
 st.set_page_config(
     page_title="Dizzy Diary",
-    page_icon="📔",  # You can use an emoji or a URL to an image
+    page_icon="📔",
 )
 
 conn = st.connection("gsheets", type=GSheetsConnection)
@@ -19,10 +19,10 @@ with st.form("diary_entry"):
     food_eaten = st.text_input("Food Eaten")
     added_sugar = st.checkbox("Had Sugary Foods")
     caffeine = st.checkbox("Had Caffeine")
+    heartbeat = st.checkbox("Heart Racing")
+    balance = st.checkbox("Feel Offbalance")
     dizzy_severity = st.slider("Dizziness", 0, 5)
     vertigo_severity = st.slider("Vertigo Scale", 0, 5)
-    balance = st.slider("Balance Issues", 0, 5)
-    heartbeat = st.slider("Heart Racing", 0, 5)
     hearing = st.slider("Hearing Loss", 0, 5)
     tinnitus = st.slider("Tinnitus", 0, 5)
     pressure = st.slider("Ear Pressure", 0, 5)
