@@ -17,10 +17,12 @@ st.title("Dizzy Diary")
 with st.form("diary_entry"):
     st.subheader("New Diary Entry")
     food_eaten = st.text_input("Food Eaten")
-    added_sugar = st.checkbox("Sugary Foods")
-    caffeine = st.checkbox("Caffeine")
+    added_sugar = st.checkbox("Had Sugary Foods")
+    caffeine = st.checkbox("Had Caffeine")
     dizzy_severity = st.slider("Dizziness", 0, 5)
     vertigo_severity = st.slider("Vertigo Scale", 0, 5)
+    balance = st.slider("Balance Issues", 0, 5)
+    heartbeat = st.slider("Heart Racing", 0, 5)
     hearing = st.slider("Hearing Loss", 0, 5)
     tinnitus = st.slider("Tinnitus", 0, 5)
     pressure = st.slider("Ear Pressure", 0, 5)
@@ -36,6 +38,8 @@ if submit_button:
             "food_eaten": food_eaten,
             "dizzy_severity": dizzy_severity,
             "vertigo_severity": vertigo_severity,
+            "balance": balance,
+            "heartbeat": heartbeat,
             "comments": comments,
             "timestamp": current_unix_timestamp,
             "added_sugar": added_sugar,
